@@ -30,23 +30,28 @@
     <p>
 </h4>
 
-Figuring out which Pre-Trained Model (PTM) from a model zoo fits the target task is essential to take advantage of plentiful model resources. With the availability of **numerous heterogeneous PTMs from diverse fields**, efficiently selecting **the most suitable** PTM is challenging due to the time-consuming costs of carrying out forward or backward passes over all PTMs. In this paper, we propose **Model Spider**, which tokenizes both PTMs and tasks by **summarizing their characteristics into vectors to enable efficient PTM selection**.
-
-By leveraging the **approximated performance of PTMs** on a separate set of training tasks, **Model Spider** learns to construct representation and measure the fitness score between **a model-task pair** via their representation. The ability to rank relevant PTMs higher than others generalizes to new tasks. With the top-ranked PTM candidates, we further learn to enrich task repr. with their PTM-specific semantics **to re-rank the PTMs for better selection**. **Model Spider** balances efficiency and selection ability, making PTM selection like a spider preying on a web.
-
-**Model Spider** demonstrates promising performance across various model categories, including **visual models and Large Language Models (LLMs)**. In this repository, we have built a comprehensive and user-friendly PyTorch-based model ranking toolbox for evaluating the future generalization performance of models. It aids in selecting **the most suitable** foundation pre-trained models for achieving optimal performance in real-world tasks **after fine-tuning**. In this benchmark for selecting/ranking PTMs, we have replicated relevant model selection methods such as H-Score, LEEP, LogME, NCE, NLEEP, OTCE, PACTran, GBC, and LFC:
-
-+ We introduce a *single-source model zoo*, building **10 PTMs** on ImageNet across five architecture families, *i.e.*, Inception, ResNet, DenseNet, MobileNet, and MNASNet. These models can be evaluated on **9 downstream datasets** using measure like *weighted tau*, including Aircraft, Caltech101, Cars, CIFAR10, CIFAR100, DTD, Pet, and SUN397 for classification, UTKFace and dSprites for regression.
-
-+ We construct a *multi-source model zoo* where **42 heterogeneous PTMs** are pre-trained from multiple datasets, with 3 architectures of similar magnitude, *i.e.*, Inception-V3, ResNet-50, and DenseNet-201, pre-trained on 14 datasets, including animals, general and 3D objects, plants, scene-based, remote sensing, and multi-domain recognition. We evaluate the ability to select PTMs on Aircraft, DTD, and Pet datasets.
+<details>
+    <summary>Detailed Introduction</summary>
+    <p>
+    Figuring out which Pre-Trained Model (PTM) from a model zoo fits the target task is essential to take advantage of plentiful model resources. With the availability of <b>numerous heterogeneous PTMs from diverse fields</b>, efficiently selecting <b>the most suitable</b> PTM is challenging due to the time-consuming costs of carrying out forward or backward passes over all PTMs. In this paper, we propose <b>Model Spider</b>, which tokenizes both PTMs and tasks by <b>summarizing their characteristics into vectors to enable efficient PTM selection</b>.
+    <br>
+    By leveraging the <b>approximated performance of PTMs</b> on a separate set of training tasks, <b>Model Spider</b> learns to construct representation and measure the fitness score between <b>a model-task pair</b> via their representation. The ability to rank relevant PTMs higher than others generalizes to new tasks. With the top-ranked PTM candidates, we further learn to enrich task repr. with their PTM-specific semantics <b>to re-rank the PTMs for better selection</b>. <b>Model Spider</b> balances efficiency and selection ability, making PTM selection like a spider preying on a web.
+    <br>
+    <b>Model Spider</b> demonstrates promising performance across various model categories, including <b>visual models and Large Language Models (LLMs)</b>. In this repository, we have built a comprehensive and user-friendly PyTorch-based model ranking toolbox for evaluating the future generalization performance of models. It aids in selecting <b>the most suitable</b> foundation pre-trained models for achieving optimal performance in real-world tasks <b>after fine-tuning</b>. In this benchmark for selecting/ranking PTMs, we have reproduced relevant model selection methods such as H-Score, LEEP, LogME, NCE, NLEEP, OTCE, PACTran, GBC, and LFC.
+    <ol>
+        <li>We introduce a <em>single-source model zoo</em>, building <b>10 PTMs</b> on ImageNet across five architecture families, <em>i.e.</em>, Inception, ResNet, DenseNet, MobileNet, and MNASNet. These models can be evaluated on <b>9 downstream datasets</b> using measure like <em>weighted tau</em>, including Aircraft, Caltech101, Cars, CIFAR10, CIFAR100, DTD, Pet, and SUN397 for classification, UTKFace and dSprites for regression.</li>
+        <li>We construct a <em>multi-source model zoo</em> where <b>42 heterogeneous PTMs</b> are pre-trained from multiple datasets, with 3 architectures of similar magnitude, <em>i.e.</em>, Inception-V3, ResNet-50, and DenseNet-201, pre-trained on 14 datasets, including animals, general and 3D objects, plants, scene-based, remote sensing, and multi-domain recognition. We evaluate the ability to select PTMs on Aircraft, DTD, and Pet datasets.</li>
+    </ol>
+    </p>
+</details>
 
 In this repo, you can figure out:
 
-* Comprehensive implementations of existing model selection/ranking algorithms, along with 2 accompanying benchmark evaluations.
-* Get started quickly with Model Spider, and enjoy its user-friendly inference capabilities.
-* Feel free to customize the application scenarios of Model Spider, starting from pre-trained model libraries containing 10 and 42 models, respectively.
+* Implementations of **Pre-trained Model Selection / Ranking *(for unseen data)*** with 2 accompanying benchmark evaluations, including **H-Score, LEEP, LogME, NCE, NLEEP, OTCE, PACTran, GBC, and LFC**.
+* **A pre-trained model zoo** containing **42** heterogeneous models (**3** architectures, Inception-V3, ResNet-50, and DenseNet-201 (ImageNet pretrained), fine-tuned on **14** downstream vision datasets).
+* **Get started quickly** with our method **Model Spider**, and enjoy its user-friendly inference capabilities.
+* Feel free to **customize** the application scenarios of **Model Spider**!
 
-Also, if you meet problems, feel free to shoot us issues (English or Chinese)!
 
 &nbsp;
 
@@ -83,8 +88,7 @@ Performance comparisons of **9 baseline approaches** and Model Spider on the *si
         <td align="center">Mean</td>
     </tr>
     <tr>
-        <!-- <td><a href="https://arxiv.org/abs/1601.08188">H-Score</a></td> -->
-        <td>H-Score </td> -->
+        <td>H-Score </td>
         <td align="center">0.328</td>
         <td align="center">0.738</td>
         <td align="center">0.616</td>
@@ -206,39 +210,41 @@ Performance comparisons of **9 baseline approaches** and Model Spider on the *si
     <line>
 </table>
 
-All pre-trained models were downloaded from huggingface. For more experimental results (detailed model performance on more benchmark datasets) and details, please refer to our [paper](https://arxiv.org/abs/2306.03900).
-
 &nbsp;
 
 ## Code Implementation
 
-### Prerequisites
-
-&emsp; Please refer to [`requirements.txt`](requirements.txt).
-
-
 ### Quick Start & Reproduce
 
-- Choose your path **/xxx/xx** to store data:
+- Set up the environment:
     ```bash
-    source ./scripts/modify-var.sh /xxx/xx
+    conda create --name opencompass python=3.10 pytorch torchvision pytorch-cuda -c nvidia -c pytorch -y
+    conda activate modelspider
+    git clone https://github.com/zhangyikaii/Model-Spider.git
+    cd Model-Spider
+    pip install -r requirements.txt
     ```
 
-- Download the pre-trained spider [this location](TODO) into **/xxx/xx**, and run the following command:
+- Choose your path `xxx/xx` to store data & model:
+    ```bash
+    source ./scripts/modify-path.sh xxx/xx
+    ```
 
+- Download the pre-trained **model spider** [here](TODO) to previous path `xxx/xx`, and run:
     ```shell
-    bash scripts/run-learnware-trainer-test.sh /xxx/xx/pre_trained.pth
+    bash scripts/test-model-spider.sh xxx/xx/pre_trained.pth
     ```
     The results will be displayed on the screen.
 
 &nbsp;
 
-## Reproduce for Other Baselines
-Some benchmarking methods can be time-consuming. We have already provided the results in the benchmark.txt file. To run the benchmarks, use the following command:
+## Reproduce for Other Baseline Methods
+
+We provided results of baseline method in the `assests/baseline_results.csv` file. Run following command to reproduce them:
+
 ```shell
-bash scripts/run-baseline.sh
+bash scripts/reproduce-baseline-methods.sh
 ```
-The original scores will be saved in benchmark.txt.
 
 &nbsp;
 
