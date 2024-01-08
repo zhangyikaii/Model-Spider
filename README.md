@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="http://zhijian.readthedocs.io"><img width="450px" height="auto" src="assests/Model-Spider.png"></a>
+  <a href="http://zhijian.readthedocs.io"><img width="650px" height="auto" src="assests/Model-Spider.png"></a>
 </div>
 
 
@@ -56,13 +56,13 @@ In this repo, you can figure out:
 &nbsp;
 
 ## Table of Contents
-- [Performance Evaluation](#pre-trained-model-ranking-performance)
+- [Table of Contents](#table-of-contents)
+- [Pre-trained Model Ranking Performance](#pre-trained-model-ranking-performance)
 - [Code Implementation](#code-implementation)
-   - [Prerequisites](#prerequisites)
-   - [Quick Start & Reproduce](#quick-start-&-reproduce)
-   - [Train Your Own Model Spider](#train-your-own-model-spider)
-- [Reproduce for Other Baselines](#reproduce-for-other-baselines)
-- [Implementation for 42 models of Figure 3 in paper](#implementation-for-42-models-of-figure-3-in-paper)
+  - [Quick Start \& Reproduce](#quick-start--reproduce)
+- [Reproduce for Other Baseline Methods](#reproduce-for-other-baseline-methods)
+- [Contributing](#contributing)
+- [Citing Model Spider](#citing-model-spider)
 
 &nbsp;
 
@@ -196,7 +196,7 @@ Performance comparisons of **9 baseline approaches** and Model Spider on the *si
         <td align="center">0.095</td>
     </tr>
     <tr>
-        <td>MODEL SPIDER (Ours)</td>
+        <td><b>Moder Spider</b> (Ours)</td>
         <td align="center">0.506</td>
         <td align="center"><b>0.761</b></td>
         <td align="center"><b>0.785</b></td>
@@ -245,7 +245,6 @@ We provided results of baseline method in the `assests/baseline_results.csv` fil
 ```shell
 bash scripts/reproduce-baseline-methods.sh
 ```
-
 &nbsp;
 
 ## Contributing
