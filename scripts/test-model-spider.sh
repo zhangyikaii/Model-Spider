@@ -1,0 +1,24 @@
+python trainer.py \
+    --seed 0 \
+    --train_dataset c86 c59 c16 c14 c38 c43 c9 c12 c32 c19 c31 c57 c29 \
+    --val_dataset c86 \
+    --test_dataset CIFAR10 Caltech101 DTD Pet Aircraft CIFAR100 Cars SUN397 dSprites \
+    --test_size_threshold 1536 \
+    --data_sub_url swin_base_7_checkpoint \
+    --heterogeneous \
+    --lr 0.00025 \
+    --weight_decay 0.0005 \
+    --momentum 0.5 \
+    --max_epoch 30 \
+    --optimizer Adam \
+    --num_learnware 10 \
+    --batch_size 16 \
+    --dataset_size_threshold 5120 \
+    --lr_scheduler cosine \
+    --val_ratio 0.05 \
+    --fixed_gt_size_threshold 64 \
+    --heterogeneous_sampled_maxnum 10 \
+    --data_url $PATH_TO_SAMPLED_DATA/implclproto \
+    --log_url $PATH_TO_LOG \
+    --pretrained_url $1
+    
