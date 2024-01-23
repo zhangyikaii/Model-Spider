@@ -230,7 +230,7 @@ Performance comparisons of **9 baseline approaches** and Model Spider on the *si
     source ./scripts/modify-path.sh xxx/xx
     ```
 
-- Download the pre-trained **model spider** [here](TODO) to previous path `xxx/xx`, and run:
+- Download the pre-trained **model spider** [here](https://drive.google.com/drive/folders/1EoUBOfqWdV5qG_GO897pneJtmxouP5vL?usp=sharing) to previous path `xxx/xx`, and run:
     ```shell
     bash scripts/test-model-spider.sh xxx/xx/pre_trained.pth
     ```
