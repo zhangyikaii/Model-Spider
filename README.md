@@ -22,7 +22,7 @@
 </h3>
 <h4 align="center">
     <p>
-        📑 <a href="https://arxiv.org/abs/2306.03900">[Paper]</a> [<b>Code</b>] <a href="TBD">[Blog]</a>
+        📑 <a href="https://arxiv.org/abs/2306.03900">[Paper]</a> [<b>Code</b>]</a>
     <p>
     <p>
         <b>English</b> |
@@ -256,28 +256,23 @@ Model Spider is currently in active development, and we warmly welcome any contr
 ## Citing Model Spider
 
 ```latex
-@article{model-spider-abs-2306-03900,
-  author = {Yi{-}Kai Zhang and
-            Ting{-}Ji Huang and
-            Yao{-}Xiang Ding and
-            De{-}Chuan Zhan and
-            Han{-}Jia Ye},
-  title = {Model Spider: Learning to Rank Pre-Trained Models Efficiently},
-  journal = {CoRR},
-  volume = {abs/2306.03900},
-  year = {2023},
-  url = {https://doi.org/10.48550/arXiv.2306.03900},
-  doi = {10.48550/ARXIV.2306.03900},
-  eprinttype = {arXiv},
-  eprint = {2306.03900}
-}
-
-@misc{ModelSpider2023,
-  author = {Model Spider Contributors},
-  title = {Model-Spider},
-  year = {2023},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/zhangyikaii/Model-Spider}}
+@inproceedings{ModelSpiderNeurIPS23,
+  author    = {Yi{-}Kai Zhang and
+               Ting{-}Ji Huang and
+               Yao{-}Xiang Ding and
+               De{-}Chuan Zhan and
+               Han{-}Jia Ye},
+  editor    = {Alice Oh and
+               Tristan Naumann and
+               Amir Globerson and
+               Kate Saenko and
+               Moritz Hardt and
+               Sergey Levine},
+  title     = {Model Spider: Learning to Rank Pre-Trained Models Efficiently},
+  booktitle = {Advances in Neural Information Processing Systems 36: Annual Conference
+               on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans,
+               LA, USA, December 10 - 16, 2023},
+  year      = {2023},
+  url       = {http://papers.nips.cc/paper\_files/paper/2023/hash/2c71b14637802ed08eaa3cf50342b2b9-Abstract-Conference.html}
 }
 ```

@@ -11,10 +11,10 @@ from pathlib import Path
 from einops import rearrange, repeat
 from einops.layers.torch import Rearrange
 
-from learnware.learnware_model import LearnwareCAHeterogeneous
-from learnware.learnware_loss import HierarchicalCE
-from learnware.learnware_dataset import LearnwareDataset
-from trainer_utils import PrepareFunc, pprint, Logger, set_seed, save_pickle, set_gpu, nan_assert, get_command_line_parser, measure_test
+from learnware.model import LearnwareCAHeterogeneous
+from learnware.loss import HierarchicalCE
+from learnware.dataset import LearnwareDataset
+from utils import PrepareFunc, pprint, Logger, set_seed, save_pickle, set_gpu, nan_assert, get_command_line_parser, measure_test
 from learnware.learnware_info import DATASET2NUM_CLASSES, DATA_SUB_URL2DIM, BKB_SPECIFIC_RANK
 
 torch.multiprocessing.set_sharing_strategy('file_system')
@@ -415,7 +415,7 @@ class Trainer(object):
                     content += f'{i_key}_{i_mdataset},{self.best_state[i_mdataset][i_mt][i_key]:.3f},'
         content = content[:-1] + '\n'
 
-        with open('./ulearnware_unified_results.csv', 'a') as f:
+        with open('./results.csv', 'a') as f:
             f.write(content)
 
     def test(self, epoch, control_saved=[]):

@@ -12,7 +12,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.transforms as transforms
 
-from trainer_utils import (
+from utils import (
     get_command_line_parser,
     pprint,
     set_gpu,
