@@ -230,9 +230,9 @@ Performance comparisons of **9 baseline approaches** and Model Spider on the *si
     source ./scripts/modify-path.sh xxx/xx
     ```
 
-- Download the pre-trained **model spider** [here](https://drive.google.com/drive/folders/1EoUBOfqWdV5qG_GO897pneJtmxouP5vL?usp=sharing) to previous path `xxx/xx`, and run:
+- Download the data and pre-trained **model spider** [here](https://drive.google.com/drive/folders/1EoUBOfqWdV5qG_GO897pneJtmxouP5vL?usp=sharing) to previous path `xxx/xx`, unzip **c_data.zip** and then run:
     ```shell
-    bash scripts/test-model-spider.sh xxx/xx/pre_trained.pth
+    bash scripts/test-model-spider.sh xxx/xx/best.pth
     ```
     The results will be displayed on the screen.
 
