@@ -24,10 +24,10 @@
     <p>
         📑 <a href="https://arxiv.org/abs/2306.03900">[Paper]</a> [<b>Code</b>]</a>
     <p>
-    <p>
+<!--     <p>
         <b>English</b> |
         <a href="https://github.com/zhangyikaii/Model-Spider/edit/main/README_CN.md">中文</a>
-    <p>
+    <p> -->
 </h4>
 
 <details>
@@ -47,11 +47,12 @@
 
 In this repo, you can figure out:
 
-* Implementations of **Pre-trained Model Selection / Ranking *(for unseen data)*** with 2 accompanying benchmark evaluations, including **H-Score, LEEP, LogME, NCE, NLEEP, OTCE, PACTran, GBC, and LFC**.
-* **A pre-trained model zoo** containing **42** heterogeneous models (**3** architectures, Inception-V3, ResNet-50, and DenseNet-201 (ImageNet pretrained), fine-tuned on **14** downstream vision datasets).
+* Implementations of **Pre-trained Model Selection / Ranking *(for unseen data)*** with an accompanying benchmark evaluation, including **H-Score, LEEP, LogME, NCE, NLEEP, OTCE, PACTran, GBC, and LFC**.
 * **Get started quickly** with our method **Model Spider**, and enjoy its user-friendly inference capabilities.
 * Feel free to **customize** the application scenarios of **Model Spider**!
-
+<!--
+* **A pre-trained model zoo** containing **42** heterogeneous models (**3** architectures, Inception-V3, ResNet-50, and DenseNet-201 (ImageNet pretrained), fine-tuned on **14** downstream vision datasets).
+-->
 
 &nbsp;
 
@@ -230,7 +231,8 @@ Performance comparisons of **9 baseline approaches** and Model Spider on the *si
     source ./scripts/modify-path.sh xxx/xx
     ```
 
-- Download the data and pre-trained **model spider** [here](https://drive.google.com/drive/folders/1EoUBOfqWdV5qG_GO897pneJtmxouP5vL?usp=sharing) to previous path `xxx/xx`, unzip **c_data.zip** to path `xxx/xx/data/` and then run:
+- Download the data and pre-trained **model spider** [here](https://drive.google.com/drive/folders/1EoUBOfqWdV5qG_GO897pneJtmxouP5vL?usp=sharing) to previous path `xxx/xx`. (Note that the training set for model spider is sampled from EuroSAT, OfficeHome, PACS, SmallNORB, STL10 and VLCS)
+- Unzip **c_data.zip** to path `xxx/xx/data/` and then run:
     ```shell
     bash scripts/test-model-spider.sh xxx/xx/best.pth
     ```
@@ -262,17 +264,10 @@ Model Spider is currently in active development, and we warmly welcome any contr
                Yao{-}Xiang Ding and
                De{-}Chuan Zhan and
                Han{-}Jia Ye},
-  editor    = {Alice Oh and
-               Tristan Naumann and
-               Amir Globerson and
-               Kate Saenko and
-               Moritz Hardt and
-               Sergey Levine},
   title     = {Model Spider: Learning to Rank Pre-Trained Models Efficiently},
   booktitle = {Advances in Neural Information Processing Systems 36: Annual Conference
                on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans,
                LA, USA, December 10 - 16, 2023},
   year      = {2023},
-  url       = {http://papers.nips.cc/paper\_files/paper/2023/hash/2c71b14637802ed08eaa3cf50342b2b9-Abstract-Conference.html}
 }
 ```
