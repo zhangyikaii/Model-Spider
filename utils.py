@@ -281,7 +281,6 @@ class PrepareFunc(object):
         self.args = args
 
     def prepare_optimizer(self, model):
-        # TODO: 抽取 params group
         def set_optimizer(cur_type, cur_encoder):
             if cur_type == 'Adam':
                 return optim.Adam(

@@ -1,6 +1,6 @@
 for cur_dataset in Aircraft Cars CIFAR10 CIFAR100 DTD Pet SUN397
 do
-    python feature_extractor.py \
+    python ./tools/feature_extractor.py \
         --gpu 1 \
         --dataset $cur_dataset \
         --batch_size 128 \
