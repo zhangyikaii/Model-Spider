@@ -24,10 +24,10 @@
     <p>
         📑 <a href="https://arxiv.org/abs/2306.03900">[Paper]</a> [<b>Code</b>]</a>
     <p>
-    <p>
+<!--     <p>
         <b>English</b> |
         <a href="https://github.com/zhangyikaii/Model-Spider/edit/main/README_CN.md">中文</a>
-    <p>
+    <p> -->
 </h4>
 
 <details>
@@ -256,23 +256,16 @@ Model Spider is currently in active development, and we warmly welcome any contr
 ## Citing Model Spider
 
 ```latex
-@inproceedings{ModelSpiderNeurIPS23,
-  author    = {Yi{-}Kai Zhang and
-               Ting{-}Ji Huang and
-               Yao{-}Xiang Ding and
-               De{-}Chuan Zhan and
-               Han{-}Jia Ye},
-  editor    = {Alice Oh and
-               Tristan Naumann and
-               Amir Globerson and
-               Kate Saenko and
-               Moritz Hardt and
-               Sergey Levine},
-  title     = {Model Spider: Learning to Rank Pre-Trained Models Efficiently},
-  booktitle = {Advances in Neural Information Processing Systems 36: Annual Conference
-               on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans,
-               LA, USA, December 10 - 16, 2023},
-  year      = {2023},
-  url       = {http://papers.nips.cc/paper\_files/paper/2023/hash/2c71b14637802ed08eaa3cf50342b2b9-Abstract-Conference.html}
+@inproceedings{DBLP:conf/nips/ZhangHDZY23,
+  author       = {Yi{-}Kai Zhang and
+                  Ting{-}Ji Huang and
+                  Yao{-}Xiang Ding and
+                  De{-}Chuan Zhan and
+                  Han{-}Jia Ye},
+  title        = {Model Spider: Learning to Rank Pre-Trained Models Efficiently},
+  booktitle    = {Advances in Neural Information Processing Systems 36: Annual Conference
+                  on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans,
+                  LA, USA, December 10 - 16, 2023},
+  year         = {2023},
 }
 ```
