@@ -43,14 +43,13 @@ class LearnwareDataset(Dataset):
                 else:
                     cur_path = os.path.join(args.data_url, DATASET2DIR[args.data_sub_url][i_dataset])
                 for i in os.listdir(cur_path):
-                    # 其中 i 是对应的 pkl文件名
+                    # i: xxx.pkl
                     cur_ready_path = (os.path.join(cur_path, i), i_dataset)
                     if 'z_' in i:
                         cur_fixed_gt_samples.append(cur_ready_path)
                     # else:
                     #     cur_samples.append(cur_ready_path)
 
-                # TODO: cur_samples 采样, 来做 GT 只使用某个已有查搜指标的ablation.
                 if stype == 'train' and args.fixed_gt_size_threshold != 0:
                     cur_fixed_gt_samples = random.sample(cur_fixed_gt_samples, min(len(cur_fixed_gt_samples), args.fixed_gt_size_threshold))
                     fixed_gt_samples_num += len(cur_fixed_gt_samples)
@@ -75,9 +74,8 @@ class LearnwareDataset(Dataset):
 
     def __getitem__(self, index):
         """
-        return [num_prototypes, dim], [num_learnware], 即一个样本
+        return: [num_prototypes, dim], [num_learnware]
         """
-        # TODO: cur_discrete_type 应该跟着dataset y type走
         if self.continuous_label:
             cur_discrete_type = 'Finetuning'
         else:
@@ -95,7 +93,6 @@ class LearnwareDataset(Dataset):
             return cur_x4pad, cur_pad_length
 
         if isinstance(x, torch.Tensor):
-            # 会报错
             ret_x, pad_length = pad_x(x)
             return ret_x, DATA_SPECIFIC_RANK[self.samples[index][1]][cur_discrete_type], self.samples[index][1], pad_length
         elif isinstance(x, list):
@@ -107,7 +104,7 @@ class LearnwareDataset(Dataset):
             if len(x) == 3:
                 return ret_x, x[2] if self.continuous_label else x[2].to(torch.long), self.samples[index][1], pad_length
             elif len(x) == 2:
-                # z_ 的样本：
+                # z_xxx.pkl：
                 return ret_x, DATA_SPECIFIC_RANK[self.samples[index][1]][cur_discrete_type], self.samples[index][1], pad_length
 
     def __len__(self):

@@ -382,7 +382,7 @@ if os.path.isfile('./hh-sampled-classes.pkl'):
 DATA_SUB_URL2DIM = {
     'RegNetY_vit_l16': 1024,
     'swin_base_7_checkpoint': 3072,
-    'resnet50': None,  # 未计算
+    'resnet50': None,  # Not yet considered
     'RegNetY_vit_l16_10shot': 1024,
     'swin_base_7_checkpoint_10shot': 3072,
     'heterogeneous': 1024
@@ -677,7 +677,7 @@ for d in DATA_FTD_SPECIFIC_RANK.keys():
 
 BKB_FTD_SPECIFIC_RANK2ID = {i: j for i, j in zip(BKB_FTD_SPECIFIC_RANK, range(len(BKB_FTD_SPECIFIC_RANK)))}
 
-# 异构:
+# heterogeneous:
 FTD_DICT1 = {i: 2048 for i in BKB_FTD_SPECIFIC_RANK if 'resnet50' in i}
 FTD_DICT2 = {i: 1920 for i in BKB_FTD_SPECIFIC_RANK if 'densenet201' in i}
 FTD_DICT3 = {i: 2048 for i in BKB_FTD_SPECIFIC_RANK if 'inception_v3' in i}

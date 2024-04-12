@@ -242,7 +242,7 @@ Performance comparisons of **9 baseline approaches** and Model Spider on the *si
 
 ## Reproduce for Other Baseline Methods
 
-We provided results of baseline method in the `assests/baseline_results.csv` file. Run following command to reproduce them:
+We provided results of baseline method in the `assests/baseline_results.csv` file. Ensure the test datasets ([Aircraft](http://www.robots.ox.ac.uk/~vgg/data/fgvc-aircraft/archives/fgvc-aircraft-2013b.tar.gz), [Cars](https://ai.stanford.edu/~jkrause/cars/car_dataset.html), [CIFAR10](https://www.cs.toronto.edu/~kriz/cifar.html), [CIFAR100](https://www.cs.toronto.edu/~kriz/cifar.html), [DTD](https://www.robots.ox.ac.uk/%7Evgg/data/dtd/index.html), [Pet](ttps://www.robots.ox.ac.uk/~vgg/data/pets), [SUN397](http://vision.princeton.edu/projects/2010/SUN)) are in `xxx/xx/data`, and run following command to reproduce them:
 
 ```shell
 bash scripts/reproduce-baseline-methods.sh

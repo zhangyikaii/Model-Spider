@@ -1,4 +1,5 @@
 import os
+import sys
 import argparse
 import datetime
 import numpy as np
@@ -12,12 +13,13 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.transforms as transforms
 
+sys.path.insert(0, sys.path[0]+"/../")
+
 from utils import (
     get_command_line_parser,
     pprint,
     set_gpu,
     set_seed,
-    log_config,
     prepare_parser,
     get_hub_transform,
     get_transform,
@@ -449,7 +451,7 @@ if __name__ == '__main__':
 
         logits_save_path = Path(f'{args.save_url}/log/{args.time_str}/{cur_model.lower()}')
         logits_save_path.mkdir(parents=True, exist_ok=True)
-        log_config(logits_save_path, vars(cur_args))
+        # log_config(logits_save_path, vars(cur_args))
 
         model, transform_kwargs, fit_kwargs = get_model(cur_args, load_url_pretrained=True, load_manual_pretrained=False)
 
